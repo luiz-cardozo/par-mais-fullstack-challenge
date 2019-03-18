@@ -78,7 +78,7 @@ The [API documentation is available here](http://localhost:8080)
 
 ## Submission Guidelines
 
-* Please submit your program by sending a zip file or GitHub repository to ti[at]parmais.com.br.
+* Please submit a link to your solution to ti[at]parmais.com.br.
 
 * The submission should contain the [FOLLOW-UP.md](./FOLLOW-UP.md) file with answers to the follow-up questions.
 
