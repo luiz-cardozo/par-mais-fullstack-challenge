@@ -1,3 +1,7 @@
+const axios = require("axios");
+
+axios.defaults.baseURL = "https://api.chucknorris.io";
+
 /**
  * TODO: This service should proxy the request to the Chuck Norris API (https://api.chucknorris.io)
  * Refer to the API definitions in the provided swagger file for response and request compliance.
@@ -8,7 +12,8 @@
  *
  * returns List
  **/
-function listCategories () {
+function listCategories() {
+  return axios.get("/jokes/categories");
 }
 
 /**
@@ -18,7 +23,11 @@ function listCategories () {
  * category String  (optional)
  * returns Fact
  **/
-function randomFact () {
+function randomFact(category) {
+  if (category) {
+    return axios.get(`/jokes/random?category=${category}`);
+  }
+  return axios.get("/jokes/random");
 }
 
 /**
@@ -28,7 +37,8 @@ function randomFact () {
  * query String
  * returns SearchResult
  **/
-function search () {
+function search(query) {
+  return axios.get(`/jokes/search?query=${query}`);
 }
 
-module.exports = {listCategories, randomFact, search}
+module.exports = { listCategories, randomFact, search };
